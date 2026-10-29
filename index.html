@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajmandir Icecream | Premium Desserts & Scoops in Akluj</title>
+    <meta name="description" content="Welcome to Rajmandir Icecream in Akluj, Solapur. Experience handcrafted artisan ice creams, rich milkshakes, sundaes, and delightful desserts.">
+    <meta name="theme-color" content="#5C2C16">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Rajmandir Icecream | Premium Desserts in Akluj">
+    <meta property="og:description" content="Discover handcrafted scoops, sundaes, and milkshakes at Rajmandir Icecream, Akluj, Solapur.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Favicon SVG Data URI -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>??</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           DESIGN TOKENS & CSS VARIABLES
+           ========================================== */
+        :root {
+            --bg-cream: #FFFDF9;
+            --bg-soft: #FDF7F0;
+            --bg-card: #FFFFFF;
+            --text-dark: #3A1F13;
+            --text-muted: #6B4C3E;
+            --primary: #D94675;
+            --primary-hover: #C03561;
+            --chocolate: #5C2C16;
+            --accent-gold: #E5A93B;
+            --border-light: #EFE3D8;
+            --shadow-subtle: 0 10px 30px -5px rgba(92, 44, 22, 0.08);
+            --shadow-hover: 0 20px 40px -10px rgba(92, 44, 22, 0.15);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==========================================
+           RESET & BASE STYLES
+           ========================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif, -apple-system, BlinkMacSystemFont;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* ==========================================
+           UTILITY CLASSES & ANIMATIONS
+           ========================================== */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(217, 70, 117, 0.1);
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-full);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.25rem, 4vw, 3rem);
+            color: var(--chocolate);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            box-shadow: 0 8px 20px rgba(217, 70, 117, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(217, 70, 117, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--chocolate);
+            border: 2px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--chocolate);
+            background-color: rgba(92, 44, 22, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ==========================================
+           A. ANNOUNCEMENT BAR & NAVIGATION
+           ========================================== */
+        .announcement-bar {
+            background: linear-gradient(135deg, var(--chocolate), #3A1F13);
+            color: #FFFDF9;
+            text-align: center;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .announcement-bar span {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 253, 249, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-subtle);
+            background-color: rgba(255, 253, 249, 0.98);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            box-shadow: 0 4px 10px rgba(217, 70, 117, 0.3);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--chocolate);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: pointer;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--chocolate);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 380px;
+            height: 100vh;
+            background-color: var(--bg-cream);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+            z-index: 1005;
+            display: flex;
+            flex-direction: column;
+            padding: 6rem 2rem 3rem 2rem;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--chocolate);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            margin-bottom: auto;
+        }
+
+        .mobile-nav-links a {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--chocolate);
+            transition: var(--transition);
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(58, 31, 19, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1004;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ==========================================
+           B. HERO SECTION
+           ========================================== */
+        .hero {
+            padding: 4rem 0 7rem 0;
+            background: radial-gradient(circle at 80% 20%, rgba(229, 169, 59, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 80%, rgba(217, 70, 117, 0.08) 0%, transparent 40%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+            color: var(--chocolate);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-main-img {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 40px var(--radius-lg) 40px var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+            transition: var(--transition);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--bg-card);
+            padding: 1.25rem 1.75rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid var(--border-light);
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+
+        .hero-badge-icon {
+            font-size: 2rem;
+        }
+
+        .hero-badge-text h4 {
+            font-size: 1rem;
+            color: var(--chocolate);
+            font-weight: 700;
+        }
+
+        .hero-badge-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ==========================================
+           C. FEATURED FLAVOURS
+           ========================================== */
+        .featured-flavours {
+            background-color: var(--bg-soft);
+        }
+
+        .flavours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .flavour-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flavour-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .flavour-img-box {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .flavour-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .flavour-card:hover .flavour-img-box img {
+            transform: scale(1.08);
+        }
+
+        .flavour-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(255, 253, 249, 0.9);
+            backdrop-filter: blur(4px);
+            color: var(--chocolate);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+        }
+
+        .flavour-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .flavour-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .flavour-title {
+            font-size: 1.35rem;
+            color: var(--chocolate);
+            font-weight: 700;
+        }
+
+        .flavour-price {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .flavour-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .flavour-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .rating span {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .view-details-btn {
+            background: none;
+            border: none;
+            color: var(--chocolate);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .view-details-btn:hover {
+            color: var(--primary);
+            gap: 0.6rem;
+        }
+
+        /* ==========================================
+           D. MENU EXPLORER
+           ========================================== */
+        .menu-explorer {
+            background-color: var(--bg-cream);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background-color: var(--bg-soft);
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--chocolate);
+            color: #FFFFFF;
+            border-color: var(--chocolate);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item.hide {
+            display: none;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .menu-img-wrap {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .menu-item-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-name {
+            font-size: 1.2rem;
+            color: var(--chocolate);
+            font-weight: 700;
+        }
+
+        .menu-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .menu-item-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item-badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            background: rgba(92, 44, 22, 0.08);
+            color: var(--chocolate);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        /* ==========================================
+           E. BRAND STORY
+           ========================================== */
+        .brand-story {
+            background-color: var(--bg-soft);
+            overflow: hidden;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .story-images {
+            position: relative;
+        }
+
+        .story-img-main {
+            width: 85%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .story-img-sub {
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            width: 55%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            border: 8px solid var(--bg-soft);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .story-content h2 {
+            font-size: clamp(2.25rem, 4vw, 3rem);
+            color: var(--chocolate);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .story-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .story-highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .story-highlight-icon {
+            font-size: 1.75rem;
+        }
+
+        .story-highlight-text h4 {
+            font-size: 1rem;
+            color: var(--chocolate);
+            font-weight: 700;
+        }
+
+        .story-highlight-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* ==========================================
+           F. WHY CUSTOMERS CHOOSE US
+           ========================================== */
+        .why-us {
+            background-color: var(--bg-cream);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(217, 70, 117, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem auto;
+            transition: var(--transition);
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--primary);
+            color: #FFFFFF;
+        }
+
+        .why-card h3 {
+            font-size: 1.25rem;
+            color: var(--chocolate);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           G. BESTSELLERS / FEATURED FAVOURITES
+           ========================================== */
+        .bestsellers {
+            background: linear-gradient(135deg, var(--chocolate), #3A1F13);
+            color: #FFFDF9;
+            position: relative;
+        }
+
+        .bestsellers .section-title {
+            color: #FFFDF9;
+        }
+
+        .bestsellers .section-tag {
+            background: rgba(229, 169, 59, 0.2);
+            color: var(--accent-gold);
+        }
+
+        .bestsellers .section-desc {
+            color: #EFE3D8;
+        }
+
+        .bestseller-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .bestseller-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bestseller-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-gold);
+        }
+
+        .bestseller-img {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bestseller-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .bestseller-card:hover .bestseller-img img {
+            transform: scale(1.08);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-gold);
+            color: var(--chocolate);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bestseller-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .bestseller-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #FFFDF9;
+        }
+
+        .bestseller-content p {
+            color: #EFE3D8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .bestseller-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bestseller-price {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* ==========================================
+           H. PHOTO GALLERY
+           ========================================== */
+        .photo-gallery {
+            background-color: var(--bg-soft);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(58, 31, 19, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: #FFFDF9;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
+        }
+
+        /* ==========================================
+           I. TESTIMONIALS
+           ========================================== */
+        .testimonials {
+            background-color: var(--bg-cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-quote-icon {
+            font-size: 3rem;
+            color: rgba(217, 70, 117, 0.15);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--chocolate);
+            font-size: 1.2rem;
+            border: 2px solid var(--primary);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--chocolate);
+            font-weight: 700;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .sample-notice {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ==========================================
+           J. VISIT OUR STORE & K. CONTACT
+           ========================================== */
+        .contact-section {
+            background-color: var(--bg-soft);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .store-info-box {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .store-info-box h3 {
+            font-size: 2rem;
+            color: var(--chocolate);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(217, 70, 117, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .info-details h4 {
+            font-size: 1.1rem;
+            color: var(--chocolate);
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+
+        .info-details p, .info-details a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .info-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form-box {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .contact-form-box h3 {
+            font-size: 2rem;
+            color: var(--chocolate);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--chocolate);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1.25rem;
+            background-color: var(--bg-soft);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(217, 70, 117, 0.15);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .form-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .form-feedback.success {
+            background-color: rgba(46, 204, 113, 0.15);
+            color: #27ae60;
+            border: 1px solid #2ecc71;
+            display: block;
+        }
+
+        .form-feedback.error {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: #c0392b;
+            border: 1px solid #e74c3c;
+            display: block;
+        }
+
+        /* ==========================================
+           L. FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--chocolate);
+            color: #FFFDF9;
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand .logo-text {
+            color: #FFFDF9;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #EFE3D8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            max-width: 320px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #EFE3D8;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #EFE3D8;
+        }
+
+        .back-to-top {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFDF9;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================
+           MODAL & LIGHTBOX
+           ========================================== */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(58, 31, 19, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 600px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .modal.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 253, 249, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--chocolate);
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--primary);
+            color: #FFFFFF;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: var(--chocolate);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-price {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .modal-desc {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: #FFFFFF;
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           RESPONSIVE MEDIA QUERIES
+           ========================================== */
+        @media (max-width: 1024px) {
+            .hero-grid, .story-grid, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .hero-image-wrapper {
+                margin-top: 2rem;
+            }
+            .story-images {
+                min-height: 400px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions .btn {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            section {
+                padding: 4rem 0;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- A. Announcement Bar & Navigation -->
+    <div class="announcement-bar">
+        ?? Seasonal Special: Try our freshly churned <span>Alphonso Mango Magic</span> & Creamy Kesar Pista! Visit today!
+    </div>
+
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">??</div>
+                <div class="logo-text">Rajmandir <span>Icecream</span></div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#flavours">Flavours</a>
+                <a href="#menu">Menu</a>
+                <a href="#story">Our Story</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#menu" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Order Now</a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay & Drawer -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        <div class="mobile-nav-links">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#flavours" class="mobile-link">Flavours</a>
+            <a href="#menu" class="mobile-link">Menu Explorer</a>
+            <a href="#story" class="mobile-link">Brand Story</a>
+            <a href="#gallery" class="mobile-link">Photo Gallery</a>
+            <a href="#contact" class="mobile-link">Visit Store</a>
+        </div>
+        <a href="#menu" class="btn btn-primary mobile-link">Explore Menu</a>
+    </div>
+
+    <!-- B. Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content reveal">
+                    <span class="section-tag">Authentic Artisan Scoops</span>
+                    <h1>Happiness Served by the <span>Scoop.</span></h1>
+                    <p>Welcome to Rajmandir Icecream in Akluj. Indulge in rich, velvety textures, authentic Indian flavours, and delightful creamy treats crafted to make every moment sweeter.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+                        <a href="#contact" class="btn btn-secondary">Find Our Store</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper reveal">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80" alt="Delicious ice cream scoops and desserts" class="hero-main-img">
+                    <div class="hero-badge">
+                        <div class="hero-badge-icon">??</div>
+                        <div class="hero-badge-text">
+                            <h4>100% Creamy Delight</h4>
+                            <p>Handcrafted to perfection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- C. Featured Flavours -->
+    <section class="featured-flavours" id="flavours">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Signature Selection</span>
+                <h2 class="section-title">Our Famous Flavours</h2>
+                <p class="section-desc">Handpicked favourite scoops loved by dessert enthusiasts across Akluj.</p>
+            </div>
+
+            <div class="flavours-grid">
+                <!-- Flavour 1 -->
+                <div class="flavour-card reveal" data-name="Belgian Chocolate" data-price="?120" data-desc="Deep, rich, and intensely decadent Belgian dark chocolate ice cream crafted for true chocolate connoisseurs." data-img="https://images.unsplash.com/photo-1543255006-d6395e6f1511?auto=format&fit=crop&w=600&q=80">
+                    <div class="flavour-img-box">
+                        <img src="https://images.unsplash.com/photo-1543255006-d6395e6f1511?auto=format&fit=crop&w=600&q=80" alt="Belgian Chocolate Ice Cream" loading="lazy">
+                        <span class="flavour-tag">Bestseller</span>
+                    </div>
+                    <div class="flavour-content">
+                        <div class="flavour-header">
+                            <h3 class="flavour-title">Belgian Chocolate</h3>
+                            <span class="flavour-price">?120</span>
+                        </div>
+                        <p class="flavour-desc">Deep, rich, and intensely decadent Belgian dark chocolate ice cream.</p>
+                        <div class="flavour-footer">
+                            <div class="rating">? 4.9 <span>(128)</span></div>
+                            <button class="view-details-btn">View Details ?</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavour 2 -->
+                <div class="flavour-card reveal" data-name="Strawberry Delight" data-price="?100" data-desc="Sweet, tart, and bursting with real strawberry chunks folded into fresh rich cream." data-img="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=600&q=80">
+                    <div class="flavour-img-box">
+                        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=600&q=80" alt="Strawberry Delight Ice Cream" loading="lazy">
+                        <span class="flavour-tag">Refreshing</span>
+                    </div>
+                    <div class="flavour-content">
+                        <div class="flavour-header">
+                            <h3 class="flavour-title">Strawberry Delight</h3>
+                            <span class="flavour-price">?100</span>
+                        </div>
+                        <p class="flavour-desc">Sweet, tart, and bursting with real strawberry chunks folded into cream.</p>
+                        <div class="flavour-footer">
+                            <div class="rating">? 4.8 <span>(95)</span></div>
+                            <button class="view-details-btn">View Details ?</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavour 3 -->
+                <div class="flavour-card reveal" data-name="Creamy Vanilla" data-price="?80" data-desc="Classic, smooth, and aromatic vanilla bean ice cream made with pure milk and rich cream." data-img="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80">
+                    <div class="flavour-img-box">
+                        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80" alt="Creamy Vanilla Ice Cream" loading="lazy">
+                        <span class="flavour-tag">Classic</span>
+                    </div>
+                    <div class="flavour-content">
+                        <div class="flavour-header">
+                            <h3 class="flavour-title">Creamy Vanilla</h3>
+                            <span class="flavour-price">?80</span>
+                        </div>
+                        <p class="flavour-desc">Classic, smooth, and aromatic vanilla bean ice cream made with pure milk.</p>
+                        <div class="flavour-footer">
+                            <div class="rating">? 4.9 <span>(142)</span></div>
+                            <button class="view-details-btn">View Details ?</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavour 4 -->
+                <div class="flavour-card reveal" data-name="Mango Magic" data-price="?110" data-desc="Tropical indulgence featuring authentic Alphonso mango pulp blended into thick, creamy perfection." data-img="https://images.unsplash.com/photo-1560008511-11c63416e52d?auto=format&fit=crop&w=600&q=80">
+                    <div class="flavour-img-box">
+                        <img src="https://images.unsplash.com/photo-1560008511-11c63416e52d?auto=format&fit=crop&w=600&q=80" alt="Mango Magic Ice Cream" loading="lazy">
+                        <span class="flavour-tag">Seasonal</span>
+                    </div>
+                    <div class="flavour-content">
+                        <div class="flavour-header">
+                            <h3 class="flavour-title">Mango Magic</h3>
+                            <span class="flavour-price">?110</span>
+                        </div>
+                        <p class="flavour-desc">Tropical indulgence featuring authentic Alphonso mango pulp blended smooth.</p>
+                        <div class="flavour-footer">
+                            <div class="rating">? 5.0 <span>(210)</span></div>
+                            <button class="view-details-btn">View Details ?</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavour 5 -->
+                <div class="flavour-card reveal" data-name="Butterscotch Crunch" data-price="?100" data-desc="Golden butterscotch ice cream generously loaded with crunchy caramelized praline bits." data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80">
+                    <div class="flavour-img-box">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Butterscotch Crunch Ice Cream" loading="lazy">
+                        <span class="flavour-tag">Crunchy</span>
+                    </div>
+                    <div class="flavour-content">
+                        <div class="flavour-header">
+                            <h3 class="flavour-title">Butterscotch Crunch</h3>
+                            <span class="flavour-price">?100</span>
+                        </div>
+                        <p class="flavour-desc">Golden butterscotch ice cream generously loaded with crunchy praline bits.</p>
+                        <div class="flavour-footer">
+                            <div class="rating">? 4.8 <span>(115)</span></div>
+                            <button class="view-details-btn">View Details ?</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavour 6 -->
+                <div class="flavour-card reveal" data-name="Pista Delight" data-price="?120" data-desc="Rich pistachio ice cream infused with cardamom and topped with toasted crushed pistachios." data-img="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80">
+                    <div class="flavour-img-box">
+                        <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" alt="Pista Delight Ice Cream" loading="lazy">
+                        <span class="flavour-tag">Traditional</span>
+                    </div>
+                    <div class="flavour-content">
+                        <div class="flavour-header">
+                            <h3 class="flavour-title">Pista Delight</h3>
+                            <span class="flavour-price">?120</span>
+                        </div>
+                        <p class="flavour-desc">Rich pistachio ice cream infused with cardamom and topped with crushed pistachios.</p>
+                        <div class="flavour-footer">
+                            <div class="rating">? 4.9 <span>(88)</span></div>
+                            <button class="view-details-btn">View Details ?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D. Menu Explorer -->
+    <section class="menu-explorer" id="menu">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Complete Menu</span>
+                <h2 class="section-title">Explore Our Delicious Range</h2>
+                <p class="section-desc">Filter through our wide selection of classic scoops, royal mastanis, refreshing fruit desserts, and thick milkshakes.</p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="filter-buttons reveal">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="classic">Classic Ice Creams</button>
+                <button class="filter-btn" data-filter="special">Special Flavours</button>
+                <button class="filter-btn" data-filter="fruit">Fruit-Based</button>
+                <button class="filter-btn" data-filter="shake">Milkshakes & Mastani</button>
+                <button class="filter-btn" data-filter="sundae">Sundaes & Falooda</button>
+                <button class="filter-btn" data-filter="cake">Ice Cream Cakes</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Classic -->
+                <div class="menu-item reveal" data-category="classic" data-name="Rich Chocolate Scoop" data-price="?90" data-desc="Smooth milk chocolate ice cream." data-img="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Rich Chocolate" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Rich Chocolate Scoop</h3><span class="menu-item-price">?90</span></div>
+                        <p class="menu-item-desc">Smooth milk chocolate ice cream.</p>
+                        <span class="menu-item-badge">Classic Ice Creams</span>
+                    </div>
+                </div>
+
+                <div class="menu-item reveal" data-category="classic" data-name="American Nuts" data-price="?110" data-desc="Vanilla loaded with assorted almonds, cashews, and raisins." data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="American Nuts" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">American Nuts</h3><span class="menu-item-price">?110</span></div>
+                        <p class="menu-item-desc">Vanilla loaded with assorted almonds, cashews, and raisins.</p>
+                        <span class="menu-item-badge">Classic Ice Creams</span>
+                    </div>
+                </div>
+
+                <!-- Special -->
+                <div class="menu-item reveal" data-category="special" data-name="Rajmandir Special Royal Rajbhog" data-price="?140" data-desc="Saffron-infused rich ice cream with dry fruits and silver foil." data-img="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" alt="Royal Rajbhog" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Royal Rajbhog</h3><span class="menu-item-price">?140</span></div>
+                        <p class="menu-item-desc">Saffron-infused rich ice cream with dry fruits and cardamom.</p>
+                        <span class="menu-item-badge">Special Flavours</span>
+                    </div>
+                </div>
+
+                <div class="menu-item reveal" data-category="special" data-name="Kesar Badam" data-price="?130" data-desc="Traditional saffron milk ice cream with crushed almonds." data-img="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Kesar Badam" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Kesar Badam</h3><span class="menu-item-price">?130</span></div>
+                        <p class="menu-item-desc">Traditional saffron milk ice cream with crushed almonds.</p>
+                        <span class="menu-item-badge">Special Flavours</span>
+                    </div>
+                </div>
+
+                <!-- Fruit-Based -->
+                <div class="menu-item reveal" data-category="fruit" data-name="Fresh Sitaphal Scoop" data-price="?130" data-desc="Made with real custard apple pulp and thick cream." data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Fresh Sitaphal" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Fresh Sitaphal</h3><span class="menu-item-price">?130</span></div>
+                        <p class="menu-item-desc">Made with real custard apple pulp and rich cream.</p>
+                        <span class="menu-item-badge">Fruit-Based Desserts</span>
+                    </div>
+                </div>
+
+                <div class="menu-item reveal" data-category="fruit" data-name="Tender Coconut Ice Cream" data-price="?120" data-desc="Refreshing tender coconut pulp blended into velvety cream." data-img="https://images.unsplash.com/photo-1560008511-11c63416e52d?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1560008511-11c63416e52d?auto=format&fit=crop&w=600&q=80" alt="Tender Coconut" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Tender Coconut</h3><span class="menu-item-price">?120</span></div>
+                        <p class="menu-item-desc">Refreshing tender coconut pulp blended into velvety cream.</p>
+                        <span class="menu-item-badge">Fruit-Based Desserts</span>
+                    </div>
+                </div>
+
+                <!-- Milkshakes & Mastani -->
+                <div class="menu-item reveal" data-category="shake" data-name="Mango Mastani" data-price="?160" data-desc="Rich mango shake topped with a large scoop of mango ice cream and dry fruits." data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Mango Mastani" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Mango Mastani</h3><span class="menu-item-price">?160</span></div>
+                        <p class="menu-item-desc">Rich mango shake topped with a large scoop of ice cream.</p>
+                        <span class="menu-item-badge">Milkshakes & Mastani</span>
+                    </div>
+                </div>
+
+                <div class="menu-item reveal" data-category="shake" data-name="Chocolate Thick Shake" data-price="?150" data-desc="Extremely creamy chocolate shake topped with fudge sauce." data-img="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=600&q=80" alt="Chocolate Thick Shake" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Chocolate Thick Shake</h3><span class="menu-item-price">?150</span></div>
+                        <p class="menu-item-desc">Extremely creamy chocolate shake topped with fudge sauce.</p>
+                        <span class="menu-item-badge">Milkshakes & Mastani</span>
+                    </div>
+                </div>
+
+                <!-- Sundaes & Falooda -->
+                <div class="menu-item reveal" data-category="sundae" data-name="Royal Rose Falooda" data-price="?170" data-desc="Traditional layered dessert with falooda sev, sabja seeds, rose syrup, and ice cream." data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Royal Rose Falooda" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Royal Rose Falooda</h3><span class="menu-item-price">?170</span></div>
+                        <p class="menu-item-desc">Layered dessert with falooda sev, sabja, rose syrup, and ice cream.</p>
+                        <span class="menu-item-badge">Sundaes & Falooda</span>
+                    </div>
+                </div>
+
+                <div class="menu-item reveal" data-category="sundae" data-name="Nutty Chocolate Sundae" data-price="?190" data-desc="Three scoops of chocolate and vanilla with hot fudge and roasted nuts." data-img="https://images.unsplash.com/photo-1543255006-d6395e6f1511?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1543255006-d6395e6f1511?auto=format&fit=crop&w=600&q=80" alt="Nutty Chocolate Sundae" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Nutty Chocolate Sundae</h3><span class="menu-item-price">?190</span></div>
+                        <p class="menu-item-desc">Three scoops of chocolate and vanilla with hot fudge.</p>
+                        <span class="menu-item-badge">Sundaes & Falooda</span>
+                    </div>
+                </div>
+
+                <!-- Ice Cream Cakes -->
+                <div class="menu-item reveal" data-category="cake" data-name="Black Forest Ice Cream Cake" data-price="?550" data-desc="Layered sponge cake and chocolate ice cream with cherries." data-img="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80">
+                    <div class="menu-img-wrap"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Black Forest Cake" loading="lazy"></div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-header"><h3 class="menu-item-name">Black Forest Cake (500g)</h3><span class="menu-item-price">?550</span></div>
+                        <p class="menu-item-desc">Layered sponge cake and chocolate ice cream with cherries.</p>
+                        <span class="menu-item-badge">Ice Cream Cakes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E. Brand Story -->
+    <section class="brand-story" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-images reveal">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" alt="Ice cream parlor interior" class="story-img-main">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Scoops being served" class="story-img-sub">
+                </div>
+                <div class="story-content reveal">
+                    <span class="section-tag">Our Sweet Journey</span>
+                    <h2>Crafting Joy & Sweet Memories in Akluj</h2>
+                    <p>Rajmandir Icecream has grown to become a beloved local dessert destination in Akluj, Solapur. We believe that ice cream is more than just a treat—it is a way to celebrate little joys, share laughter with family, and create unforgettable moments.</p>
+                    <p>Every scoop we serve is prepared with dedication, ensuring rich flavors and a welcoming ambiance for everyone who walks through our doors.</p>
+                    
+                    <div class="story-highlights">
+                        <div class="story-highlight-item">
+                            <div class="story-highlight-icon">??</div>
+                            <div class="story-highlight-text">
+                                <h4>Wide Variety</h4>
+                                <p>From classic to royal flavours</p>
+                            </div>
+                        </div>
+                        <div class="story-highlight-item">
+                            <div class="story-highlight-icon">??</div>
+                            <div class="story-highlight-text">
+                                <h4>Warm Vibe</h4>
+                                <p>Cozy space for families</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- F. Why Customers Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">The Rajmandir Experience</span>
+                <h2 class="section-title">Why Customers Choose Us</h2>
+                <p class="section-desc">We take pride in serving delicious scoops with a warm smile and welcoming atmosphere.</p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon">??</div>
+                    <h3>Diverse Flavour Range</h3>
+                    <p>Explore an extensive menu featuring rich chocolates, fruity delights, and traditional Indian specialities.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">?</div>
+                    <h3>Treats for Every Occasion</h3>
+                    <p>Whether it's a family celebration, an evening hangout, or a solo sweet craving, we have something special.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">??</div>
+                    <h3>Easy to Connect</h3>
+                    <p>Friendly staff ready to assist you with orders, party bookings, and special dessert recommendations.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">??</div>
+                    <h3>Joyful Gatherings</h3>
+                    <p>A favourite local spot where friends and families gather to share happiness one scoop at a time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- G. Bestsellers or Customer Favourites -->
+    <section class="bestsellers">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Featured Favourites</span>
+                <h2 class="section-title">Customer Recommended Specials</h2>
+                <p class="section-desc">Discover our most talked-about desserts that keep our guests coming back for more.</p>
+            </div>
+
+            <div class="bestseller-grid">
+                <div class="bestseller-card reveal">
+                    <div class="bestseller-img">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Mango Mastani" loading="lazy">
+                        <span class="featured-badge">Featured</span>
+                    </div>
+                    <div class="bestseller-content">
+                        <h3>Signature Mango Mastani</h3>
+                        <p>A decadent Pune-style mastani featuring thick mango shake layered with generous scoops of rich mango ice cream and chopped dry fruits.</p>
+                        <div class="bestseller-footer">
+                            <span class="bestseller-price">?160</span>
+                            <a href="#menu" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bestseller-card reveal">
+                    <div class="bestseller-img">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Royal Rose Falooda" loading="lazy">
+                        <span class="featured-badge">Featured</span>
+                    </div>
+                    <div class="bestseller-content">
+                        <h3>Royal Rose Falooda</h3>
+                        <p>A refreshing traditional dessert featuring sweet basil seeds, silky falooda vermicelli, fragrant rose syrup, and creamy vanilla ice cream.</p>
+                        <div class="bestseller-footer">
+                            <span class="bestseller-price">?170</span>
+                            <a href="#menu" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bestseller-card reveal">
+                    <div class="bestseller-img">
+                        <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" alt="Royal Rajbhog Scoop" loading="lazy">
+                        <span class="featured-badge">Featured</span>
+                    </div>
+                    <div class="bestseller-content">
+                        <h3>Royal Rajbhog Scoop</h3>
+                        <p>An exquisite royal Indian flavour infused with saffron, cardamom, and premium dry fruits for a truly regal dessert experience.</p>
+                        <div class="bestseller-footer">
+                            <span class="bestseller-price">?140</span>
+                            <a href="#menu" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H. Photo Gallery -->
+    <section class="photo-gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Visual Feast</span>
+                <h2 class="section-title">Sweet Moments in Pictures</h2>
+                <p class="section-desc">Take a visual peek at our scoops, sundaes, milkshakes, and welcoming parlour atmosphere.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80" alt="Assorted ice cream cones and scoops" loading="lazy">
+                    <div class="gallery-overlay"><span>Assorted Ice Cream Scoops</span></div>
+                </div>
+                <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1543255006-d6395e6f1511?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1543255006-d6395e6f1511?auto=format&fit=crop&w=600&q=80" alt="Rich chocolate sundae presentation" loading="lazy">
+                    <div class="gallery-overlay"><span>Rich Chocolate Sundae</span></div>
+                </div>
+                <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Thick milkshake with toppings" loading="lazy">
+                    <div class="gallery-overlay"><span>Creamy Thick Milkshake</span></div>
+                </div>
+                <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Fresh fruit dessert bowl" loading="lazy">
+                    <div class="gallery-overlay"><span>Fruit-Based Dessert Bowl</span></div>
+                </div>
+                <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Cozy dessert parlour seating" loading="lazy">
+                    <div class="gallery-overlay"><span>Welcoming Parlour Ambiance</span></div>
+                </div>
+                <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" alt="Traditional dry fruit scoop" loading="lazy">
+                    <div class="gallery-overlay"><span>Traditional Dry Fruit Scoop</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- I. Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Customer Words</span>
+                <h2 class="section-title">What Dessert Lovers Say</h2>
+                <p class="section-desc">Sample feedback from community dessert enthusiasts.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote-icon">“</div>
+                    <p class="testimonial-text">"Rajmandir Icecream is our go-to spot in Akluj for family dessert outings. Their Belgian Chocolate and Mango Mastani are absolutely unmatched!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rahul Deshmukh</h4>
+                            <p>Local Resident</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote-icon">“</div>
+                    <p class="testimonial-text">"Such a clean and welcoming parlour! The quality of their scoops and the courteous service make every visit a wonderful experience."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Priya Kulkarni</h4>
+                            <p>Dessert Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote-icon">“</div>
+                    <p class="testimonial-text">"The Sitaphal ice cream and Royal Falooda are simply out of this world. Highly recommend stopping by if you are in Akluj!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Amit Shinde</h4>
+                            <p>Food Blogger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="sample-notice">*Note: Reviews shown are sample testimonials reflecting typical customer experiences.</p>
+        </div>
+    </section>
+
+    <!-- J. Visit Our Store & K. Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Visit Our Parlour</h2>
+                <p class="section-desc">We would love to serve you a delicious scoop. Drop by our store or send us an enquiry.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Store Info -->
+                <div class="store-info-box reveal">
+                    <h3>Store Information</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">??</div>
+                        <div class="info-details">
+                            <h4>Business Name & Location</h4>
+                            <p><strong>Rajmandir Icecream</strong></p>
+                            <p>Akluj, Solapur, Maharashtra, India</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">??</div>
+                        <div class="info-details">
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:+919999900000">+91 99999 XXXXX</a> <span style="font-size: 0.8rem; font-style: italic;">(Configurable)</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">??</div>
+                        <div class="info-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday – Sunday: 11:00 AM – 11:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">???</div>
+                        <div class="info-details">
+                            <h4>Directions</h4>
+                            <p><a href="https://maps.google.com/?q=Rajmandir+Icecream+Akluj+Solapur" target="_blank" rel="noopener">Open in Google Maps ?</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-box reveal">
+                    <h3>Send Us a Message</h3>
+                    <p>Have a question or want to order a custom ice cream cake? Fill out the form below.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactInfo">Phone or Email *</label>
+                            <input type="text" id="contactInfo" name="contactInfo" class="form-control" placeholder="Enter phone number or email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enquiryType">Enquiry Type</label>
+                            <select id="enquiryType" name="enquiryType" class="form-control">
+                                <option value="general">General Enquiry</option>
+                                <option value="party">Party / Event Order</option>
+                                <option value="cake">Ice Cream Cake Booking</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+
+                        <div id="formFeedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- L. Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text" style="color: #FFFDF9;">Rajmandir <span>Icecream</span></div>
+                    <p>Serving pure happiness, handcrafted scoops, and rich desserts in Akluj, Solapur, Maharashtra.</p>
+                    <div style="font-size: 1.25rem; display: flex; gap: 1rem;">
+                        <span>??</span> <span>??</span> <span>??</span> <span>??</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#flavours">Flavours</a>
+                        <a href="#menu">Menu Explorer</a>
+                        <a href="#story">Brand Story</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Discover</h4>
+                    <div class="footer-links">
+                        <a href="#gallery">Photo Gallery</a>
+                        <a href="#contact">Visit Store</a>
+                        <a href="#contact">Contact Form</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Location</h4>
+                    <div class="footer-links">
+                        <p style="color: #EFE3D8; font-size: 0.95rem;">Akluj, Solapur, Maharashtra, India</p>
+                        <p style="color: #EFE3D8; font-size: 0.95rem;">Phone: +91 99999 XXXXX</p>
+                        <p style="color: #EFE3D8; font-size: 0.95rem;">Open Daily: 11 AM - 11 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Rajmandir Icecream, Akluj. All rights reserved.</p>
+                <div class="back-to-top" id="backToTop" aria-label="Back to top">?</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Details Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img id="modalImg" src="" alt="Flavour image" class="modal-img">
+            <div class="modal-body">
+                <h3 id="modalTitle" class="modal-title">Flavour Name</h3>
+                <div id="modalPrice" class="modal-price">?000</div>
+                <p id="modalDesc" class="modal-desc">Flavour description goes here.</p>
+                <a href="#contact" class="btn btn-primary" id="modalOrderBtn">Inquire at Store</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img id="lightboxImg" src="" alt="Enlarged gallery view">
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Dynamic Copyright Year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // 2. Sticky Header Styling on Scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 30) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // 3. Mobile Navigation Toggle
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBackdrop = document.getElementById('menuBackdrop');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMobileMenu() {
+                mobileMenu.classList.toggle('open');
+                menuBackdrop.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+            }
+
+            hamburgerBtn.addEventListener('click', toggleMobileMenu);
+            mobileMenuClose.addEventListener('click', toggleMobileMenu);
+            menuBackdrop.addEventListener('click', toggleMobileMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('open')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // 4. Menu Category Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    menuItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filterValue === 'all' || category === filterValue) {
+                            item.classList.remove('hide');
+                        } else {
+                            item.classList.add('hide');
+                        }
+                    });
+                });
+            });
+
+            // 5. Product Details Modal
+            const productModal = document.getElementById('productModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalImg = document.getElementById('modalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalPrice = document.getElementById('modalPrice');
+            const modalDesc = document.getElementById('modalDesc');
+            const modalOrderBtn = document.getElementById('modalOrderBtn');
+            const flavourCards = document.querySelectorAll('.flavour-card');
+
+            flavourCards.forEach(card => {
+                const btn = card.querySelector('.view-details-btn');
+                btn.addEventListener('click', () => {
+                    modalImg.src = card.getAttribute('data-img');
+                    modalTitle.textContent = card.getAttribute('data-name');
+                    modalPrice.textContent = card.getAttribute('data-price');
+                    modalDesc.textContent = card.getAttribute('data-desc');
+                    productModal.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeModal() {
+                productModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            modalClose.addEventListener('click', closeModal);
+            modalOrderBtn.addEventListener('click', closeModal);
+            productModal.addEventListener('click', (e) => {
+                if (e.target === productModal) closeModal();
+            });
+
+            // 6. Gallery Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.getAttribute('data-img');
+                    lightboxImg.src = imgSrc;
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            // ESC Key Closing for Modals & Lightbox
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    closeLightbox();
+                }
+            });
+
+            // 7. Form Validation & Client Feedback
+            const contactForm = document.getElementById('contactForm');
+            const formFeedback = document.getElementById('formFeedback');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const contactInfo = document.getElementById('contactInfo').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !contactInfo || !message) {
+                    formFeedback.className = 'form-feedback error';
+                    formFeedback.textContent = 'Please fill out all required fields before submitting.';
+                    return;
+                }
+
+                // Success simulation (Explanation: real submissions require a backend service or form endpoint)
+                formFeedback.className = 'form-feedback success';
+                formFeedback.innerHTML = '<strong>Thank you, ' + name + '!</strong> Your message has been prepared locally. <em>Note: Real form submissions require a backend service or email handler.</em>';
+                contactForm.reset();
+            });
+
+            // 8. Back-to-Top Control
+            const backToTop = document.getElementById('backToTop');
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 9. Scroll-triggered Reveal Animations using Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
